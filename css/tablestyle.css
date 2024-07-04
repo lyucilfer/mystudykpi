@@ -1,0 +1,199 @@
+:root {
+    --white: #fff;
+    --black: #000;
+
+    --gray-100: #eee;
+    --gray-200: #e5e7eb;
+}
+.container {
+    max-width: 100%;
+    padding: 0 16px;
+}
+.table-section {
+    background-color: var(--gray-100);
+    min-height: 100%;
+    padding: 25px 10px;
+    table-layout: fixed;
+}
+.table-wrapper {
+    align-items: center;
+    background-color: var(--white);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+}
+.table {
+    border-collapse: separate;
+    width: 100%;
+}
+.table th,
+.table td {
+    padding: 12px 16px;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-200);
+    border-right: 1px solid var(--gray-200);
+}
+.table th {
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    resize: horizontal;
+    overflow: hidden;
+    position: relative;
+    width: 80px;
+}
+.table td {
+    color: var(--black);
+    font-size: 14px;
+    width: auto;
+    text-align: center;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.table th:first-child,
+.table td:first-child {
+    background-color: var(--white);
+    left: 0;
+    z-index: 1;
+    word-wrap: break-word;
+}
+
+.table-container{
+   min-height: calc(100vh - 20rem);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.table-container form{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   width: 100%;
+}
+
+.table-container form h3{
+   font-size: 2.5rem;
+   text-transform: capitalize;
+   color: var(--black);
+   text-align: center;
+}
+
+.table-container form p{
+   font-size: 1.7rem;
+   color: var(--light-color);
+   padding-top: 1rem;
+}
+
+.table-container form p span{
+   color: var(--red);
+}
+
+.table-container form .box{
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   padding: 1.4rem;
+   background-color: var(--light-bg);
+   width: 100%;
+   margin: 1rem 0;
+}
+
+.table-container form .message{
+   margin:10px 0;
+   display: block;
+   background: #4682B4;
+   color:#fff;
+   border-radius: 5px;
+   font-size: 20px;
+   padding:10px;
+   text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .table-container {
+        min-height: calc(100vh - 50rem);
+    }
+    .table-section {
+        padding: 15px 5px;
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+
+    .table td, .table th {
+        white-space: normal;
+        overflow: hidden;
+    }
+    
+    .table tr {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 849px) {
+    .table,
+    .table-wrapper {
+        width: 100%;
+    }
+    
+    .table th {
+        display: none;
+    }
+    
+    .table td:not(nth) {
+        all: unset;
+        display: grid;
+        grid-template-columns: 13ch auto;
+        border-bottom: 1px solid var(--gray-200);
+        border-right: 1px solid var(--gray-200);
+        color: var(--black);
+        font-size: 14px;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .table td::before {
+        border-right: 1px solid var(--gray-200);
+        color: var(--black);
+        font-size: 13px;
+        padding: 12px;
+        text-transform: uppercase;
+        font-weight: 700;
+        content: attr(data-th);
+        text-align: left !important;
+    }
+    
+    .table td:first-child {
+        background-color: var(--white);
+        left: 0;
+        z-index: 1;
+        text-wrap: balance;
+        padding-top: 2rem;
+    }
+    
+    .table td:last-child {
+        background-color: var(--white);
+        left: 0;
+        z-index: 1;
+        text-wrap: balance; 
+        padding-bottom: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 13ch);
+    }
+    
+    .table .btn {
+        width: 115px;
+        text-align: center;
+        align-content: center;
+    }
+}
